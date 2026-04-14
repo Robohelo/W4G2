@@ -16,15 +16,16 @@ from esphome import pins
 
 DEPENDENCIES = ["climate", "uart"]
 
-hisense_ac_ns = cg.esphome_ns.namespace("hisense_ac")
-HisenseAC = hisense_ac_ns.class_("HisenseAC", uart.UARTDevice, cg.Component, climate.Climate)
+hisense_ac_ns = cg.esphome_ns.namespace("hisense").namespace("ac")
+AirConditioner = hisense_ac_ns.class_("AirConditioner", uart.UARTDevice, cg.Component, climate.Climate)
+
 CONF_HISENSE_ID = "hisense_id"
 
 
 CONFIG_SCHEMA = cv.All(
     climate._CLIMATE_SCHEMA.extend(
         {
-            cv.GenerateID(): cv.declare_id(HisenseAC),
+            cv.GenerateID(): cv.declare_id(AirConditioner),
             cv.Optional(CONF_FLOW_CONTROL_PIN): pins.gpio_output_pin_schema,
         }
     )
