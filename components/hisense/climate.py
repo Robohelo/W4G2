@@ -24,7 +24,7 @@ CONF_HISENSE_ID = "hisense_id"
 CONFIG_SCHEMA = cv.All(
     climate._CLIMATE_SCHEMA.extend(
         {
-            cv.GenerateID(): cv.declare_id(AirConditioner),
+            cv.GenerateID(): cv.declare_id(HisenseAC),
             cv.Optional(CONF_FLOW_CONTROL_PIN): pins.gpio_output_pin_schema,
         }
     )
