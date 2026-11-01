@@ -9,7 +9,6 @@ from esphome.const import (
     CONF_FLOW_CONTROL_PIN,
     CONF_ID,
     CONF_ADDRESS,
-    CONF_DISABLE_CRC,
     CONF_DISPLAY,
 )
 from esphome import pins
